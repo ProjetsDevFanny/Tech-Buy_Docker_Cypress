@@ -1,0 +1,24 @@
+{
+  "name": "tech-buy-v2",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenClassrooms-Student-Center/Tech-Buy-V2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OpenClassrooms-Student-Center/Tech-Buy-V2/issues"
+  },
+  "homepage": "https://github.com/OpenClassrooms-Student-Center/Tech-Buy-V2#readme",
+  "devDependencies": {
+    "cypress": "^15.16.0"
+  }
+}
