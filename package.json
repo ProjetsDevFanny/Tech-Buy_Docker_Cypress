@@ -13,12 +13,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/OpenClassrooms-Student-Center/Tech-Buy-V2/issues"
   },
   "homepage": "https://github.com/OpenClassrooms-Student-Center/Tech-Buy-V2#readme",
   "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
     "cypress": "^15.16.0"
   }
 }
