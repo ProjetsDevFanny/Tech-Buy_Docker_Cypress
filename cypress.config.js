@@ -10,7 +10,7 @@ module.exports = defineConfig({
   },
 
   env: {
-    baseURL: 'https://example.cypress.io'
+    testEnvURL: 'https://example.cypress.io',
+    baseURL: 'http://localhost:8080/'
   }
-
 });
