@@ -11,7 +11,7 @@ context("GET /products", () => {
   })
 })
 
-//EXERCICE 2: Récupérer les détails d'une catégorie par ID
+//EXERCICE 2: Récupérer les détails d'une catégorie par ID: tester une API en utilisant une donnée récupérée depuis un autre endpoint de la même API.
 
 let categoryId;
 const apiCategories = `${Cypress.env("apiUrl")}/categories`;
@@ -36,3 +36,23 @@ it("Récupérer les détails d'une catégorie par ID", () => {
 // .then((response) => {
 //   expect(response.status).to.eq(200);
 // });
+
+
+// =========================
+// Meilleur code possible : sinon, avant 2 its indépendants, le 1er échoue, le 2nd ne s'exécute pas.
+
+it("Récupérer les détails d'une catégorie, meilleur code possible", () => {
+  cy.request(apiCategories).then((response) => {
+    const categoryId =
+      response.body[Math.floor(Math.random() * response.body.length)].id;
+
+    expect(categoryId).to.be.a("number"); // Vérifie que categoryId est un nombre (pas forcément utile ici, mais bon...)
+
+    cy.request(`${apiCategories}/${categoryId}`)
+      .its("status")
+      .should("eq", 200);
+  });
+});
+
+
+// =========================
