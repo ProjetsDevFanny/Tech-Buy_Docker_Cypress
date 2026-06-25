@@ -18,7 +18,7 @@ before(() => {
     // Vérifie que l'inscription est réussie.
     expect(response.status).to.eq(201);
     
-    // 3 - Le connecter avec l'API. 
+    // 3 - Connexion de l'utilisateur avec l'API. 
     cy.request("POST", apiUrl + "/login", {
       email: fakeEmail,
       password: fakePassword,
@@ -39,7 +39,7 @@ it.only("Votre premier test", () => {
       Authorization: `Bearer ${token}` // Utilisez le token ici
     },
     body: {
-      //s’il y a un body
+      //s’il y a un body ( = pas pour GET, mais plutôt quand on envoie des données au serveur => PUT, POST, PATCH, DELETE)
     }
   }).then((response) => {
     // Vos assertions pour votre test
