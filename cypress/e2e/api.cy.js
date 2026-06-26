@@ -15,7 +15,7 @@ context("GET /products", () => {
 
 let categoryId;
 const apiCategories = `${Cypress.env("apiUrl")}/categories`;
-it("Récupérer toutes les catégories et extraire un ID", () => { .
+it("Récupérer toutes les catégories et extraire un ID", () => { 
   cy.request("GET", apiCategories).then((response) => {
     // "Prends une catégorie au hasard dans response.body et récupère son id :"
     categoryId = response.body[Math.floor(Math.random() * response.body.length)].id;
@@ -56,3 +56,31 @@ it("Récupérer les détails d'une catégorie, meilleur code possible", () => {
 
 
 // =========================
+
+
+//EXERCICE 3: Récupérer les catégories
+
+context("GET /categories", () => {
+  it("gets a list of categories", () => {
+    cy.request("GET", apiCategories).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body.length).to.be.greaterThan(2)
+    })
+  })
+})
+
+
+// ====================================
+
+//EXERCICE 4 : Récupérer la liste des utilisateurs (CDD)
+
+const apiUsers = `${Cypress.env("apiUrl")}/users`;
+
+context("GET /users", () => {
+  it("gets a list of users", () => {
+    cy.request("GET", apiUsers).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body.length).to.be.greaterThan(2)
+    })
+  })
+})
